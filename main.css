@@ -1,0 +1,16 @@
+.menu {
+  background : green;
+  position : fixed;
+  left : 0;
+  top : 0;
+  bottom : 0;
+  width : 500px;
+}
+.main {
+  transform : translateX(500px);
+  width : 100%;
+  min-height : 100vh;
+  height : 400px;
+  background : white;
+
+}
