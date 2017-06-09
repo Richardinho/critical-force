@@ -1,0 +1,9 @@
+<div class="main" [style.visibility]="isVisible? 'visible' : 'hidden'">
+    <ul>
+        <li [@menuItem]="item.menuItemState"
+            *ngFor="let item of items"
+            class="menu-link" (click)="onMenuItemClick(item.link)">{{ item.text }}
+        </li>
+    </ul>
+</div>
+<button class="hamburger" (click)="onClick()">hamburger</button>

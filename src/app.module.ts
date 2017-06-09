@@ -2,12 +2,27 @@ import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//  application
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home.component';
-import { WorkComponent } from './work.component';
-import { MenuComponent } from './menu.component';
-import { CapabilitiesComponent } from './capabilities.component';
-import { PageHeaderComponent } from './page-header.component';
+
+//  pages
+import { HomeComponent } from './pages/home/home.component';
+import { WorkComponent } from './pages/work/work.component';
+import { CapabilitiesComponent } from './pages/capabilities/capabilities.component';
+
+//  components
+import { MenuComponent } from './sharedcomponents/menu/menu.component';
+import { PageHeaderComponent } from './sharedcomponents/pageheader/page-header.component';
+import { FooterComponent } from './sharedcomponents/footer/footer.component';
+import { MainComponent } from './pages/main.component';
+
+
+import { MainResolver } from './pages/main-resolver';
+
+//  providers
+
+import { MenuService } from './pages/menu-service';
 
 @NgModule({
   imports: [
@@ -16,25 +31,46 @@ import { PageHeaderComponent } from './page-header.component';
     RouterModule.forRoot([
       {
         path: '',
-        component: HomeComponent
-      },
-      {
-        path : 'work',
-        component : WorkComponent
-      },{
-        path : 'capabilities',
-        component : CapabilitiesComponent
+        component: MainComponent,
+
+        children : [
+          {
+            path : '',
+            component : HomeComponent,
+            resolve: {
+              foobar : MainResolver
+            },
+          },
+          {
+            path : 'work',
+            component : WorkComponent,
+            resolve: {
+              foobar : MainResolver
+            },
+          },{
+            path : 'capabilities',
+            component : CapabilitiesComponent,
+            resolve: {
+              foobar : MainResolver
+            },
+        }]
       }
     ])
   ],
   declarations: [
     AppComponent,
     HomeComponent,
+    MainComponent,
     WorkComponent,
     MenuComponent,
     CapabilitiesComponent,
-    PageHeaderComponent
+    PageHeaderComponent,
+    FooterComponent
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  providers : [
+    MenuService,
+    MainResolver
+  ]
 })
 export class AppModule { }

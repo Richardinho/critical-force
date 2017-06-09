@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-
     selector : 'cf-page-header',
-    template : `
-        <h2>This is the page header</h2>
-    `
+    templateUrl : './page-header.html',
+    styleUrls : ['./page-header.css']
 })
 
 export class PageHeaderComponent {}

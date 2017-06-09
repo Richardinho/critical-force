@@ -1,0 +1,50 @@
+
+
+.hamburger {
+    position : fixed;
+    z-index : 3;
+    left : 100px;
+    top : 100px;
+    border : none;
+    width : 100px;
+    height : 100px;
+    color : white;
+    background : black;
+
+}
+
+.menu-link {
+    text-decoration : none;
+    color : black;
+}
+
+ul {
+    margin-top: 241px;
+    padding-left: 80px;
+}
+ul li {
+    margin-bottom : 12px;
+    font-size : 20px;
+    font-family : helvetica;
+
+}
+
+.main {
+
+    left : 0;
+    top : 0;
+    bottom : 0;
+    position : fixed;
+    background : red;
+    width : 500px;
+    height : 100vh;
+    z-index : 1;
+    overflow-y : scroll;
+}
+h2 {
+    width : 100%;
+    font-size : 100px;
+    background : black;
+    color : white;
+    padding : 50px;
+}

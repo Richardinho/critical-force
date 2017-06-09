@@ -1,0 +1,25 @@
+:host {
+    display : block;
+    background : black;
+    color : white;
+    padding : 20px;
+}
+
+h4 {
+    text-transform : uppercase;
+    color : white;
+    font-family : helvetica;
+}
+
+.section {
+    float : left;
+    width : 200px;
+    margin-right : 20px;
+}
+
+.section a {
+    color : #a1a1a1;
+    font-family : helvetica;
+    font-size : 11px;
+    display : block;
+}
